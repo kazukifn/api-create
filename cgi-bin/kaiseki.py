@@ -31,40 +31,20 @@ else:
     if token[1] == "ADJ":
       print("{0:20s}{1}".format(token[0],"形容詞"))
     elif token[1] == "ADP":
-      print("""
-        <meta http-equiv="content-type" charset="utf-8">
-        <p>設置詞</p>
-        """)
+      print("{0:20s}{1}".format(token[0],"設置詞"))
     elif token[1] == "ADV":
-      print("""
-        <meta http-equiv="content-type" charset="utf-8">
-        <p></p>
-        """)
+      print("{0:20s}{1}".format(token[0],"副詞"))
     elif token[1] == "AUX":
-      print("""
-        <meta http-equiv="content-type" charset="utf-8">
-        <p>形容詞</p>
-        """)
-    elif token[1] == "PRON":
-      print("""
-        <meta http-equiv="content-type" charset="utf-8">
-        <p>代名詞</p>
-        """)
-
-    elif token[1] == "SCONJ":
-      print("""
-        <meta http-equiv="content-type" charset="utf-8">
-        <p>従属接続詞</p>
-        """)
-    
-    elif token[1] == "VERB":
-      print("""
-        <meta http-equiv="content-type" charset="utf-8">
-        <p>動詞</p>
-        """)
-
-
-
+      print("{0:20s}{1}".format(token[0],"助動詞"))
+    elif token[1] == "CONJ":
+      print("{0:20s}{1}".format(token[0],"接続詞"))
+    elif token[1] == "DET":
+      print("{0:20s}{1}".format(token[0],"限定詞"))
+    elif token[1] == "ADP":
+      print("{0:20s}{1}".format(token[0],"形容詞"))
+    elif token[1] == "ADP":
+      print("{0:20s}{1}".format(token[0],"形容詞"))
+      
     else:
       print("<p>",token[1],"</p>")
       
