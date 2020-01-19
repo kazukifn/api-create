@@ -26,25 +26,14 @@ else:
   #フォームの値を取得して解析結果を表示
   t = form.getvalue("t", "0")
   tokens = Text(t)
+  hinshi = {'ADJ' : "形容詞", 'ADP' : "設置詞", 'ADV' : "副詞", 'AUX' : "助動詞", 'CONJ' : "接続詞", 'DET' : "限定詞", 'INTJ' : "間投詞", 'NOUN' : "名詞", 'NUM' : "数値", 'PART' : "助詞", 'PRON' :"代名詞", 'PROPN' : "固有名詞", 'PUNCT' : "句読点", 'SCONJ' : "連結詞", 'SYM' : "シンボル", 'VERB' : "動詞"}
+  print("<table>")
+  print("<tr>")
   for token in tokens.pos_tags:
-    
-    if token[1] == "ADJ":
-      print("{0:20s}{1}".format(token[0],"形容詞"))
-    elif token[1] == "ADP":
-      print("{0:20s}{1}".format(token[0],"設置詞"))
-    elif token[1] == "ADV":
-      print("{0:20s}{1}".format(token[0],"副詞"))
-    elif token[1] == "AUX":
-      print("{0:20s}{1}".format(token[0],"助動詞"))
-    elif token[1] == "CONJ":
-      print("{0:20s}{1}".format(token[0],"接続詞"))
-    elif token[1] == "DET":
-      print("{0:20s}{1}".format(token[0],"限定詞"))
-    elif token[1] == "ADP":
-      print("{0:20s}{1}".format(token[0],"形容詞"))
-    elif token[1] == "ADP":
-      print("{0:20s}{1}".format(token[0],"形容詞"))
-      
-    else:
-      print("<p>",token[1],"</p>")
-      
+    print("<td>",token[0],"</td>")
+  print("</tr>")
+  print("<tr>")
+  for token in tokens.pos_tags:
+    print("<td>",hinshi[token[1]],"</td>")
+  print("</tr>")
+  print("</table>")
