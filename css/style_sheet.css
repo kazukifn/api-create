@@ -1,0 +1,48 @@
+input.sample1{
+  width:600px;
+  height:50px;
+  font-size: 30px;
+  }
+
+input.sample2{
+  width:100px;
+  height: 1000px;
+  font-size: 80px
+}
+
+
+
+td {
+  font-size:50px;
+}
+
+td.sample1{
+  background: linear-gradient(transparent 70%,  red 50%);
+}
+
+td.sample2{
+  background: linear-gradient(transparent 70%, pink 50%);
+}
+
+td.sample3{
+  background: linear-gradient(transparent 70%, blue 50%);
+}
+
+td.sample4{
+  background: linear-gradient(transparent 70%, yellow 50%);
+}
+
+
+/*結果何が得られるか
+言語
+polyglozt
+if token[1] != 'VERB' and t == 0 and token[1] != 'PRON':
+      print("<td class=\"sample1\">{0}</td>".format(token[0]))
+    elif token[1] == 'PRON':
+      print("<td class=\"sample2\">{0}</td>".format(token[0]))
+    elif token[1] == 'VERB':
+      print("<td class=\"sample3\">{0}</td>".format(token[0]))
+      t += 1
+    else:
+      print("<td class=\"sample4\">{0}</td>".format(token[0]))
+*/
