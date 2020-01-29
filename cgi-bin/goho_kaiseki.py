@@ -42,12 +42,30 @@ else:
   <tr>
   """)
   t = 0
+  s = 0
   for token in tokens.pos_tags: 
-    if token[1] != 'VERB' : #sの判定
+    
+    if token[1] != 'VERB' and t == 0 and token[1] != 'PRON':  #動詞ではないかつtは0回目かつ代名詞でない
+      print("<td class=\"sample1\">{0}</td>".format(token[0]))
+    elif token[1] == 'PRON':                                  #代名詞である
+      if s == 0:
+        print("<td class=\"sample1\">{0}</td>".format(token[0])) #代名詞の主語
+        s += 1
+      else:
+        print("<td class=\"sample2\">{0}</td>".format(token[0])) #主語以外の代名詞
+    elif token[1] == 'VERB':                                  #動詞である
+      print("<td class=\"sample3\">{0}</td>".format(token[0]))
       t += 1
-      if token[1] == 'PRON' and t <= 0:
-  print("</tr>")
+    elif token[1] == 'SYM':                                    #ピリオド,カンマ
+      print("<td>{0}</td>".format(token[0]))
+      t = 0                                                    #tの値をリセット　初めのループに戻す
+      s = 0
+    else:
+      print("<td class=\"sample4\">{0}</td>".format(token[0]))    #その他は全て黄色
+
   print("""
+  </tr>
   </table>
   </div>
+  <p><img src="/image/aaa.png" height="70" width="300" alt="説明"></p>
   """)

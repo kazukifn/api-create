@@ -43,6 +43,16 @@ if token[1] != 'VERB' and t == 0 and token[1] != 'PRON':
     elif token[1] == 'VERB':
       print("<td class=\"sample3\">{0}</td>".format(token[0]))
       t += 1
+    elif token[1] == 'SYM':
+      t = 0
     else:
       print("<td class=\"sample4\">{0}</td>".format(token[0]))
+
+      """
+    if token[1] == 'PRON' and t == 0:
+      print("<td class=\"sample1\">{0}</td>".format(token[0]))
+      t += 1
+    elif token[0] != 'VERB':
+      if token[0] ==  
+      """
 */
